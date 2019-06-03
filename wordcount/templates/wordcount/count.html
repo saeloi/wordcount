@@ -15,23 +15,39 @@
     }
     #full {
         font-family: 'TmonMonsori';
-        font-size: 20px;
+        font-size: 40px;
+        width: 70%;
+        margin: 0 auto;
     }
+    @font-face { 
+        font-family: 'Handon3gyeopsal300g';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal300g.woff') format('woff'); 
+        font-weight: normal; 
+        font-style: normal; 
+    }
+    #full2 {
+        font-family: 'Handon3gyeopsal300g';
+        font-size: 20px;
+        width: 70%;
+        margin: 0 auto;
+    }
+    body{
+        background-color: rgb(189, 209, 252);
+    }
+    
 </style>
 
-<h1>당신이 입력한 텍스트는 <!--총단어수--> {{total}} 단어로 구성되어 있습니다.</h1>
-
-
+<h1 id="full" > 당신이 입력한 문장은 총 <!--총단어수--> {{total}} 단어로 구성되어 있습니다.</h1>
 <a href="{% url 'home' %}">다시하기</a>
 
-<h1>입력한 텍스트 : </h1>
+<h1 id="full">입력한 문장 : </h1>
 <!--입력받은 전체 텍스트 적는 부분-->
-<div id="full">{{fulltext}}</div>
+<div id="full2">{{fulltext}}</div>
 
 
-<h1>단어 카운트 : </h1>
+<h1 id="full">단어 카운트 : </h1>
 <!--'단어' - '단어나온 횟수'-->
 {% for word, countTotal in dictionary %}
-{{word}} = {{countTotal}}
+<div id="full2">{{word}} = {{countTotal}}</div>
 <br>
 {%endfor %}
